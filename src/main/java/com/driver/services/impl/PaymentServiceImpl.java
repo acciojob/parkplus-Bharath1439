@@ -22,7 +22,7 @@ public class PaymentServiceImpl implements PaymentService {
         Reservation reservation=reservationRepository2.findById(reservationId).get();
         Spot spot1=reservation.getSpot();
         int totalAmount=reservation.getNumberOfHours()*spot1.getPricePerHour();
-        if(totalAmount!=amountSent){
+        if(totalAmount>amountSent){
             throw new Exception("Insufficient Amount");
         }
         String payType="";
