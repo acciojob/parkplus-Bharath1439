@@ -29,8 +29,7 @@ public class ReservationServiceImpl implements ReservationService {
     List<Spot> spotList=parkingLot.getSpotList();
     //boolean spotAvailable=false;
     Spot spot1=null;
-    int price=0;
-        int price = Integer.MAX_VALUE;
+        int price= Integer.MAX_VALUE;
     for(Spot spot: spotList){
        int wheel=0;
         if(spot.getSpotType()==SpotType.TWO_WHEELER){
