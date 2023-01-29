@@ -34,9 +34,12 @@ public class Payment {
     public Boolean getPaymentCompleted() {
         return paymentCompleted;
     }
+    public boolean isPaymentCompleted() {
+        return paymentCompleted;
+    }
 
     public void setPaymentCompleted(Boolean paymentCompleted) {
-        paymentCompleted = paymentCompleted;
+        this.paymentCompleted = paymentCompleted;
     }
 
     public PaymentMode getPaymentMode() {
