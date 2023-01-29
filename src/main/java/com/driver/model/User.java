@@ -2,6 +2,7 @@ package com.driver.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,15 @@ public class User {
 
     private String name;
 
-    private String PhoneNumber;
+    private String phoneNumber;
+
+    private String password;
+
+    public User(String name, String phoneNumber, String password) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+    }
 
     public User() {
     }
@@ -36,39 +45,29 @@ public class User {
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public List<Reservation> getReservationList() {
-        return ReservationList;
+        return reservationList;
     }
 
     public void setReservationList(List<Reservation> reservationList) {
-        ReservationList = reservationList;
+        this.reservationList = reservationList;
     }
 
-    private String Password;
-
-    public User(String name, String phoneNumber, String password) {
-        this.name = name;
-        PhoneNumber = phoneNumber;
-        Password = password;
-    }
-
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    private List<Reservation> ReservationList;
-
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Reservation> reservationList=new ArrayList<>();
 }

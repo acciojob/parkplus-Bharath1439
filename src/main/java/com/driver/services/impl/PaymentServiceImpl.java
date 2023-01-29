@@ -25,8 +25,8 @@ public class PaymentServiceImpl implements PaymentService {
         if(totalAmount>amountSent){
             throw new Exception("Insufficient Amount");
         }
-        String payType="";
-        Payment payment=new Payment();
+
+
         boolean check=false;
         if(mode.equalsIgnoreCase("cash") || mode.equalsIgnoreCase("card") || mode.equalsIgnoreCase("upi")){
             check = true;
@@ -34,6 +34,7 @@ public class PaymentServiceImpl implements PaymentService {
         if(!check){
             throw new Exception("Payment mode not detected");
         }
+        Payment payment=new Payment();
         if(mode.equalsIgnoreCase("cash")){
             payment.setPaymentMode(PaymentMode.CASH);
         }
