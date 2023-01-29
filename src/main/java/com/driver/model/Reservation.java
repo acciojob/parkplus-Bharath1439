@@ -37,6 +37,9 @@ public class Reservation {
         return numberOfHours;
     }
 
+    public Reservation() {
+    }
+
     public void setNumberOfHours(int numberOfHours) {
         this.numberOfHours = numberOfHours;
     }
