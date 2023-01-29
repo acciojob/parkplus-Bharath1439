@@ -14,11 +14,11 @@ public class ParkingLot {
 
     private String name;
 
-    private String adress;
+    private String address;
 
-    public ParkingLot(String name, String adress) {
+    public ParkingLot(String name, String address) {
         this.name = name;
-        this.adress = adress;
+        this.address = address;
     }
 
     public ParkingLot() {
@@ -41,12 +41,12 @@ public class ParkingLot {
         this.name = name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<Spot> getSpotList() {
