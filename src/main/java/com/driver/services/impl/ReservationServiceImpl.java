@@ -30,6 +30,7 @@ public class ReservationServiceImpl implements ReservationService {
     //boolean spotAvailable=false;
     Spot spot1=null;
     int price=0;
+        int price = Integer.MAX_VALUE;
     for(Spot spot: spotList){
        int wheel=0;
         if(spot.getSpotType()==SpotType.TWO_WHEELER){
@@ -41,7 +42,7 @@ public class ReservationServiceImpl implements ReservationService {
         else if(spot.getSpotType()==SpotType.OTHERS){
             wheel=100;
         }
-        if(spot.getOccupied()==false && wheel>numberOfWheels){
+        if(spot.getOccupied()==false && wheel>numberOfWheels && spot.getPricePerHour() < price){
             spot1=spot;
             price=spot.getPricePerHour();
         }
