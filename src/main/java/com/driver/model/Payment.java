@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Payment {
 
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private Boolean paymentCompleted;
@@ -55,7 +55,4 @@ public class Payment {
         this.reservation = reservation;
     }
 
-    public Payment(Boolean paymentCompleted) {
-        paymentCompleted = paymentCompleted;
-    }
 }
